@@ -1,12 +1,42 @@
 \section{Related Work}
 \label{sec:related-work}
 
-\subsection{TODO: Subsection Title}
-\label{sec:related-work-sub1}
+Significant changes have been sparked by the integration of Large Language Models (LLMs) into software development, especially with regard to the automation of coding procedures \cite{feng2020codebert,fu2022linevul,husain2019codesearchnet}. Large Language Models (LLMs) have become integral to modern software engineering, demonstrating capabilities across diverse tasks including code generation \cite{croft2023dataquality,gehrmann2019gltr}, code completion \cite{fu2022vulrepair,javaparser2024}, program repair \cite{husain2019codesearchnet,xia2023keepconversation}, test generation \cite{hu2024radar,liu2024refiningchatgpt}, code review \cite{yang2023detectgpt4code}, code documentation \cite{hochreiter1997lstm}, and code summarization \cite{choi2023chatgptlawschool}. Their widespread adoption in development workflows has fundamentally transformed how software is created \cite{gao2021simcse,hellosimpleai2023robertaqa,openai2023tiktoken}. As LLM-generated code becomes more prevalent in software engineering, ensuring its quality is essential, since poor code can negatively impact reliability, performance, and maintainability. Consequently, evaluating the characteristics of LLM-generated code, including comparison with human-written code and identifying authorship, has become increasingly important.
 
-TODO: Synthesize prior work thematically. Compare findings across studies and identify unresolved gaps. Separate pre-AI era findings from AI era findings where relevant.
+\subsection{Tool Selection}
+\label{sec:tool-selection}
 
-\subsection{TODO: Subsection Title}
-\label{sec:related-work-sub2}
+Recent empirical studies document that AI-generated code exhibits higher defect
+rates than human-authored code. Cotroneo et al.~\cite{cotroneo2025} found
+1.5--1.9$\times$ more defects in AI code (ChatGPT, DeepSeek-Coder, Qwen-Coder) across
+Python and Java, with defect patterns differing qualitatively: AI code shows
+higher rates of unused variables and hardcoded statements, while human code
+exhibits more algorithmic complexity issues. CodeRabbit's production
+analysis~\cite{coderabbit2025} confirmed 1.7$\times$ higher issue density and 1.5--2$\times$
+more security violations in AI-assisted pull requests. Prior cross-language
+studies on human code revealed that type-safe languages (Java, C\#) have fewer
+defects than dynamically-typed languages (Python, JavaScript)~\cite{ray2014},
+yet these predate the AI era and do not address whether type systems similarly
+constrain AI-specific risks. While static analysis tools (Pylint, ESLint, PMD)
+and complexity metrics are established for human code assessment~\cite{johnson2013,
+ayewah2008}, their application to AI-generated code across multiple languages and quality dimensions simultaneously remains limited.
 
-TODO: Position the current work relative to the closest prior studies. Highlight what this paper addresses that prior work does not.
+\subsection{Code Quality Comparison Studies and Research Gap}
+\label{sec:related-work-stats}
+
+Prior code quality comparisons differ substantially in statistical rigour and scope. Jamil et al.~\cite{jamil2025can} apply the Wilcoxon signed-rank test across complexity, security, and stylistic metrics for Python, supplementing with TOPSIS ranking, but report no effect sizes. Licorish et al.~\cite{licorish2025comparing} use independent $t$-tests on 72 Python tasks, a parametric choice whose distributional assumptions are unvalidated for skewed code metrics. Zhong et al.~\cite{zhong2025developer} employ a richer statistical battery---Kruskal-Wallis with Dunn post-hoc correction, Mann-Kendall trend analysis, and Scott-Knott clustering---but study conversational dynamics across turns rather than commit-level authorship differences. Cotroneo et al.~\cite{cotroneo2025} rely on descriptive statistics and frequency heatmaps without significance testing, which precludes inference about whether their observed 1.5--1.9$\times$ defect gap is systematic. Detection-oriented studies~\cite{xu2024distinguishing, rahman2024automatic} optimise for authorship discriminability via AUC-ROC rather than characterising quality dimensions.
+
+% \section{Research Gap}
+% \label{sec:research-gap}
+
+% Prior work establishes that AI-generated code is measurably lower in quality than human-authored code, yet leaves several dimensions of that gap uncharacterised. We identify four limitations that motivate this study.
+
+% \textbf{Language coverage.} Existing comparisons are dominated by Python, or at most Python and Java~\cite{jamil2025can, cotroneo2025, licorish2025comparing}. Whether the quality gap holds across statically- and dynamically-typed languages—and whether type systems moderate AI-associated defect risk—has not been tested at scale.
+
+% \textbf{Dataset realism.} Most studies generate code from benchmark prompts (HumanEval, CodeSearchNet) rather than analysing code that AI agents produced in real development contexts~\cite{jamil2025can, licorish2025comparing}. Benchmark-derived samples may not reflect the structural and stylistic properties of AI contributions submitted as pull requests.
+
+% \textbf{Analytical breadth.} Each prior study examines one quality dimension---stylistic violations, defect rates, or security findings---in isolation. No existing work applies a unified framework covering stylistic, structural complexity, AST-level, and security dimensions simultaneously on the same corpus.
+
+% \textbf{Statistical rigour.} Statistical approaches vary from descriptive-only~\cite{cotroneo2025} to parametric tests applied to non-normal distributions~\cite{licorish2025comparing}. Effect sizes are absent throughout, making it impossible to assess the practical magnitude of reported differences or compare findings across studies.
+
+% This work addresses all four gaps through a large-scale empirical analysis of 19,539 files drawn from real-world AI contributions in the AIDev dataset, covering ten languages across both type disciplines, applying nonparametric tests with effect sizes (Cliff's $\delta$, Cram{\'e}r's $V$) consistently across stylistic, structural, and security dimensions. Additionally, no prior study compares open-weight and closed-weight LLMs on code quality and security outcomes; we include this as a dedicated research question, connecting model accessibility to practical quality risk.

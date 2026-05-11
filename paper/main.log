@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  11 MAY 2026 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  11 MAY 2026 12:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -736,7 +736,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 2.
  (./sections/acknowledgments.tex)) (./sections/introduction.tex
-<cc-by.pdf, id=140, 88.33pt x 31.11626pt>
+<cc-by.pdf, id=141, 88.33pt x 31.11626pt>
 File: cc-by.pdf Graphic file (type pdf)
 <use cc-by.pdf>
 Package pdftex.def Info: cc-by.pdf  used on input line 7.
@@ -745,14 +745,19 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 7.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<lipics-logo-bw.pdf, id=143, 591.44762pt x 144.42657pt>
+<lipics-logo-bw.pdf, id=144, 591.44762pt x 144.42657pt>
 File: lipics-logo-bw.pdf Graphic file (type pdf)
 <use lipics-logo-bw.pdf>
 Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 7.
 (pdftex.def)             Requested size: 64.00354pt x 14.0pt.
  [1.1
 
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./orcid.pdf> <./lipics-logo-bw.pdf> <./cc-by.pdf>]) (./sections/related-work.tex) (./sections/experiment-design.tex
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./orcid.pdf> <./lipics-logo-bw.pdf> <./cc-by.pdf>]
+Overfull \hbox (8.33397pt too wide) has occurred while \output is active
+[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
+ []
+
+[2.2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]) (./sections/related-work.tex) (./sections/experiment-design.tex [3.3]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 11.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -766,17 +771,12 @@ Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
-[2.2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [3.3]) (./sections/methodology.tex
+[4.4]) (./sections/methodology.tex [5.5]
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
-[4.4] [5.5]) (./sections/results.tex
-Overfull \hbox (8.33397pt too wide) has occurred while \output is active
-[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
- []
-
-[6.6]
+[6.6]) (./sections/results.tex [7.7]
 LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8.5> on input line 43.
@@ -785,6 +785,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <4.25> on input line 43.
 
+Overfull \hbox (8.33397pt too wide) has occurred while \output is active
+[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
+ []
+
+[8.8]
 Overfull \hbox (2.62854pt too wide) in paragraph at lines 111--111
 []|\T1/lmr/bx/n/9 (-20) AI
  []
@@ -1184,64 +1189,58 @@ Overfull \hbox (6.93259pt too wide) in paragraph at lines 111--111
 []|\T1/lmr/m/n/9 (-20) 14.7| 
  []
 
-[7.7]
-Overfull \hbox (8.33397pt too wide) has occurred while \output is active
-[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
- []
-
-[8.8] [9.9]
+[9.9]
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
 [10.10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11.11]
+Overfull \hbox (8.33397pt too wide) has occurred while \output is active
+[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
+ []
+
+[12.12]
 Underfull \hbox (badness 10000) in alignment at lines 254--254
 [][][][][] 
  []
 
-
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
- [11.11]) (./sections/discussion.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+[13.13]) (./sections/discussion.tex) (./main.bbl
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
-[12.12]) (./main.bbl [13.13])
+[14.14] [15.15]
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
-[14.14] (./main.aux)
+[16.16]) [17.17] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 94DB44C9923AD28228AE872F33B60586;6912.
+(rerunfilecheck)             Checksum: FE957D7DC9FF24726BAEE8E242732457;7011.
  ) 
 Here is how much of TeX's memory you used:
- 24503 strings out of 467525
- 430101 string characters out of 5418983
- 893975 words of memory out of 5000000
- 52624 multiletter control sequences out of 15000+600000
- 760166 words of font info for 262 fonts, out of 8000000 for 9000
+ 24573 strings out of 467525
+ 431271 string characters out of 5418983
+ 890975 words of memory out of 5000000
+ 52647 multiletter control sequences out of 15000+600000
+ 761313 words of font info for 272 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,14n,93p,1879b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (14 pages, 610796 bytes).
+Output written on main.pdf (17 pages, 631293 bytes).
 PDF statistics:
- 479 PDF objects out of 1000 (max. 8388607)
- 407 compressed objects within 5 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 558 PDF objects out of 1000 (max. 8388607)
+ 483 compressed objects within 5 object streams
+ 118 named destinations out of 1000 (max. 500000)
  77078 words of extra memory for PDF output out of 89155 (max. 10000000)
 

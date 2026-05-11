@@ -6,6 +6,16 @@
 \newblock \url{https://github.com/anonymous/msr2026-replication}, 2026.
 \newblock Accessed 2026-04-14.
 
+\bibitem{ayewah2008}
+Nathaniel Ayewah, David Hovemeyer, J.~David Morgenthaler, John Penix, and William Pugh.
+\newblock Using static analysis to find bugs.
+\newblock {\em IEEE Software}, 25(5):22--29, 2008.
+
+\bibitem{choi2023chatgptlawschool}
+Jonathan~H. Choi, Kristin~E. Hickman, Amy Monahan, and Daniel Schwarcz.
+\newblock Chatgpt goes to law school.
+\newblock {\em Available at SSRN}, 2023.
+
 \bibitem{codeparrot2022}
 {CodeParrot}.
 \newblock {GitHub} code clean dataset.
@@ -17,10 +27,46 @@
 \newblock State of {AI} vs human code generation report 2025.
 \newblock Technical report, CodeRabbit, December 2025.
 
+\bibitem{cotroneo2025}
+Domenico Cotroneo, Luigi De~Simone, Pietro Liguori, Roberto Natella, and Nikita Improta.
+\newblock Human-written vs. {AI}-generated code: A large-scale study of code quality and developers' perceptions in {LLM}-generated code.
+\newblock {\em arXiv preprint arXiv:2508.21634}, 2025.
+\newblock URL: \url{https://arxiv.org/abs/2508.21634}.
+
+\bibitem{croft2023dataquality}
+Roland Croft, M.~Ali Babar, and M.~Mehdi Kholoosi.
+\newblock Data quality for software vulnerability datasets.
+\newblock In {\em 2023 IEEE/ACM 45th International Conference on Software Engineering (ICSE)}, pages 121--133, 2023.
+
 \bibitem{curtis1979measuring}
 B.~Curtis, S.~B. Sheppard, P.~Milliman, M.~Borst, and T.~Love.
 \newblock Measuring the psychological complexity of software maintenance tasks with the halstead and mccabe metrics.
 \newblock {\em IEEE Transactions on Software Engineering}, SE-5(2):96--104, 1979.
+
+\bibitem{feng2020codebert}
+Zhangyin Feng, Daya Guo, Duyu Tang, Nan Duan, Xiaocheng Feng, Ming Gong, Linjun Shou, Bing Qin, Ting Liu, and Daxin Jiang.
+\newblock Codebert: A pre-trained model for programming and natural languages.
+\newblock {\em arXiv preprint arXiv:2002.08155}, 2020.
+
+\bibitem{fu2022linevul}
+Michael Fu and Chakkrit Tantithamthavorn.
+\newblock Linevul: A transformer-based line-level vulnerability prediction.
+\newblock In {\em Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)}, 2022.
+
+\bibitem{fu2022vulrepair}
+Michael Fu, Chakkrit Tantithamthavorn, Trung Le, Van Nguyen, and Dinh Phung.
+\newblock Vulrepair: A t5-based automated software vulnerability repair.
+\newblock In {\em Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)}, pages 935--947, 2022.
+
+\bibitem{gao2021simcse}
+Tianyu Gao, Xingcheng Yao, and Danqi Chen.
+\newblock Simcse: Simple contrastive learning of sentence embeddings.
+\newblock In {\em Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing}, pages 6894--6910, 2021.
+
+\bibitem{gehrmann2019gltr}
+Sebastian Gehrmann, Hendrik Strobelt, and Alexander~M. Rush.
+\newblock Gltr: Statistical detection and visualization of generated text.
+\newblock In {\em Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics: System Demonstrations}, pages 111--116, 2019.
 
 \bibitem{codeql2024}
 GitHub.
@@ -32,6 +78,17 @@ GitHub.
 Hanxi Guo, Siyuan Cheng, Kaiyuan Zhang, Guangyu Shen, and Xiangyu Zhang.
 \newblock {CodeMirage}: A multi-lingual benchmark for detecting {AI}-generated and paraphrased source code from production-level {LLMs}, 2025.
 \newblock URL: \url{https://arxiv.org/abs/2506.11059}, \href {https://arxiv.org/abs/2506.11059} {\path{arXiv:2506.11059}}.
+
+\bibitem{hellosimpleai2023robertaqa}
+{Hello-SimpleAI}.
+\newblock Roberta-qa chatgpt detector.
+\newblock \url{https://huggingface.co/Hello-SimpleAI/chatgpt-qa-detector-roberta}, 2023.
+\newblock Accessed 2023.
+
+\bibitem{hochreiter1997lstm}
+Sepp Hochreiter and J{\"u}rgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural Computation}, 9(8):1735--1780, 1997.
 
 \bibitem{staticcheck2024}
 Dominik Honnef.
@@ -45,17 +102,42 @@ Dominik Honnef.
 \newblock \url{https://htmlhint.com/}, 2024.
 \newblock Accessed 2025-05-01.
 
-\bibitem{khoury2023chatgpt}
-Raphael Khoury, Anderson~R. Avila, Jacob Brunelle, and Bhaskar~Mitra Camara.
-\newblock On the security vulnerabilities of text-to-{SQL} models.
-\newblock In {\em Proceedings of the 2023 IEEE/ACM International Conference on Software Engineering}, 2023.
-\newblock Study cited in: https://www.scworld.com/news/ai-will-create-a-tidal-wave-of-buggy-vulnerable-software.
+\bibitem{hu2024radar}
+Xiaomeng Hu, Pin-Yu Chen, and Tsung-Yi Ho.
+\newblock Radar: Robust ai-text detection via adversarial learning.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2024.
 
-\bibitem{aidev2025}
-Hao Li, Haoxiang Zhang, and Ahmed~E. Hassan.
-\newblock The rise of {AI} teammates in software engineering ({SE}) 3.0: How autonomous coding agents are reshaping software engineering, 2025.
-\newblock AIDev-pop dataset Version 3 (August 2025 snapshot).
-\newblock URL: \url{https://arxiv.org/abs/2507.15003}, \href {https://arxiv.org/abs/2507.15003} {\path{arXiv:2507.15003}}.
+\bibitem{husain2019codesearchnet}
+Hamel Husain, Ho-Hsiang Wu, Tiferet Gazit, Miltiadis Allamanis, and Marc Brockschmidt.
+\newblock Codesearchnet challenge: Evaluating the state of semantic code search.
+\newblock {\em arXiv preprint arXiv:1909.09436}, 2019.
+
+\bibitem{jamil2025can}
+Mohammad~Talal Jamil, Shamsa Abid, and Shafay Shamail.
+\newblock Can {LLMs} generate higher quality code than humans? an empirical study.
+\newblock In {\em 2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)}. IEEE, 2025.
+\newblock \href {https://doi.org/10.1109/MSR66628.2025.00081} {\path{doi:10.1109/MSR66628.2025.00081}}.
+
+\bibitem{javaparser2024}
+{JavaParser}.
+\newblock Javaparser.
+\newblock \url{https://javaparser.org}, 2024.
+\newblock Accessed 2024.
+
+\bibitem{johnson2013}
+Brittany Johnson, Yoonki Song, Emerson Murphy-Hill, and Robert Bowdidge.
+\newblock Why don't software developers use static analysis tools to find bugs?
+\newblock In {\em Proceedings of the 2013 International Conference on Software Engineering}, pages 672--681, 2013.
+
+\bibitem{licorish2025comparing}
+Sherlock~A Licorish, Ansh Bajpai, Chetan Arora, Fanyu Wang, and Kla Tantithamthavorn.
+\newblock Comparing human and {LLM} generated code: The jury is still out!
+\newblock {\em arXiv preprint arXiv:2501.16857}, 2025.
+
+\bibitem{liu2024refiningchatgpt}
+Yue Liu, Thanh Le-Cong, Ratnadira Widyasari, Chakkrit Tantithamthavorn, Li~Li, Xuan-Bach~D. Le, and David Lo.
+\newblock Refining chatgpt-generated code: Characterizing and mitigating code quality issues.
+\newblock {\em ACM Transactions on Software Engineering and Methodology}, 2024.
 
 \bibitem{Liu2023}
 Z.~Liu, S.~Wang, T.~Chen, et~al.
@@ -92,6 +174,18 @@ MITRE.
 \newblock \url{https://cwe.mitre.org/top25/}, 2024.
 \newblock Accessed: January 12, 2026.
 
+\bibitem{modall2025}
+{Modall}.
+\newblock {AI} in software development: Trends and statistics.
+\newblock \url{https://modall.ca/blog/ai-in-software-development-trends-statistics}, 2025.
+\newblock Accessed 2025-05-11.
+
+\bibitem{openai2023tiktoken}
+{OpenAI}.
+\newblock tiktoken: A fast bpe tokeniser for use with openai's models.
+\newblock \url{https://github.com/openai/tiktoken}, 2023.
+\newblock Accessed 2023.
+
 \bibitem{PMD}
 {PMD}.
 \newblock Pmd source code analyzer.
@@ -110,11 +204,15 @@ PyCQA.
 \newblock \url{https://semgrep.dev/}, 2024.
 \newblock Accessed 2024-12-01.
 
-\bibitem{rao2023security}
-Yujia Rao, Sridhar Chimalakonda, and Chakkrit Tantithamthavorn.
-\newblock Security weaknesses of {Copilot} generated code in {GitHub}.
-\newblock {\em arXiv preprint arXiv:2310.02059}, October 2023.
-\newblock URL: \url{https://arxiv.org/abs/2310.02059}, \href {https://arxiv.org/abs/2310.02059} {\path{arXiv:2310.02059}}.
+\bibitem{rahman2024automatic}
+Musfiqur Rahman, Sayedhassan Khatoonabadi, Ahmad Abdellatif, and Emad Shihab.
+\newblock Automatic detection of {LLM}-generated code: A comparative case study of contemporary models across function and class granularities.
+\newblock {\em arXiv preprint arXiv:2409.01382}, 2024.
+
+\bibitem{ray2014}
+Baishakhi Ray, Daryl Posnett, Vladimir Filkov, and Premkumar Devanbu.
+\newblock A large scale study of programming languages and code quality in {GitHub}.
+\newblock In {\em Proceedings of the 22nd ACM SIGSOFT International Symposium on Foundations of Software Engineering}, pages 155--165, 2014.
 
 \bibitem{rubocop2024}
 {RuboCop Contributors}.
@@ -133,11 +231,31 @@ H.~M. Sneed.
 \newblock Understanding software through numbers: A metric based approach to program comprehension.
 \newblock {\em Journal of Software Maintenance: Research and Practice}, 7(6):405--419, 1995.
 
+\bibitem{xia2023keepconversation}
+Chunqiu~Steven Xia and Lingming Zhang.
+\newblock Keep the conversation going: Fixing 162 out of 337 bugs for \$0.42 each using chatgpt.
+\newblock {\em arXiv preprint arXiv:2304.00385}, 2023.
+
+\bibitem{xu2024distinguishing}
+Xiaodan Xu, Chao Ni, Xinrong Guo, Shaoxuan Liu, Xiaoya Wang, Kui Liu, and Xiaohu Yang.
+\newblock Distinguishing {LLM}-generated from human-written code by contrastive learning.
+\newblock {\em ACM Transactions on Software Engineering and Methodology}, 2024.
+
+\bibitem{yang2023detectgpt4code}
+Xuehai Yang et~al.
+\newblock Detectgpt4code: Zero-shot detection of llm-generated code via approximated task conditioning.
+\newblock {\em arXiv preprint arXiv:2310.05103}, 2023.
+
 \bibitem{ESLint}
 Nicholas~C. Zakas.
 \newblock Eslint: Pluggable javascript linter.
 \newblock \url{https://eslint.org/}, 2024.
 \newblock Accessed 2024-12-01.
+
+\bibitem{zhong2025developer}
+Suzhen Zhong, Ying Zou, and Bram Adams.
+\newblock Developer-{LLM} conversations: An empirical study of interactions and generated code quality.
+\newblock {\em arXiv preprint arXiv:2509.10402}, 2025.
 
 \bibitem{zuse1993criteria}
 H.~Zuse.
