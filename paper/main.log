@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  11 MAY 2026 05:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.9)  11 MAY 2026 11:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -757,24 +757,8 @@ Package pdftex.def Info: lipics-logo-bw.pdf  used on input line 7.
  [1.1
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./orcid.pdf> <./lipics-logo-bw.pdf> <./cc-by.pdf>]) (./sections/related-work.tex) (./sections/experiment-design.tex
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 5.
-
-
-LaTeX Warning: Citation `mann1945nonparametric' on page 2 undefined on input line 6.
-
-
-Overfull \hbox (8.33397pt too wide) has occurred while \output is active
-[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
- []
-
-[2.2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-
-LaTeX Warning: Reference `sec:static_analysis' on page 3 undefined on input line 12.
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 12.
-(/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 11.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -782,20 +766,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
+Overfull \hbox (8.33397pt too wide) has occurred while \output is active
+[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
+ []
 
-LaTeX Warning: Reference `sec:static_analysis' on page 3 undefined on input line 18.
+[2.2{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+
+LaTeX Warning: Reference `sec:static_analysis' on page 3 undefined on input line 13.
+
+[3.3]) (./sections/methodology.tex
+
+LaTeX Warning: Citation `codemirage2024' on page 4 undefined on input line 7.
 
 
-LaTeX Warning: Reference `sec:static_analysis' on page 3 undefined on input line 24.
+LaTeX Warning: Reference `tab:dataset' on page 4 undefined on input line 7.
 
-) (./sections/methodology.tex
-
-LaTeX Warning: Citation `codemirage2024' on page 3 undefined on input line 7.
-
-
-LaTeX Warning: Reference `tab:dataset' on page 3 undefined on input line 7.
-
-[3.3]
 
 LaTeX Warning: Citation `codeparrot2022' on page 4 undefined on input line 9.
 
@@ -803,44 +788,47 @@ LaTeX Warning: Citation `codeparrot2022' on page 4 undefined on input line 9.
 LaTeX Warning: Citation `codemirage2024' on page 4 undefined on input line 13.
 
 
-LaTeX Warning: Citation `Liu2023' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `Pylint' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `PMD' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `ESLint' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `Cppcheck' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `Roslyn' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `staticcheck2024' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `phpstan2024' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `rubocop2024' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Citation `htmlhint2024' on page 4 undefined on input line 48.
-
-
-LaTeX Warning: Reference `tab:linter-coverage' on page 4 undefined on input line 48.
-
-
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
 [4.4]
+
+LaTeX Warning: Citation `Liu2023' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `Pylint' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `PMD' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `ESLint' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `Cppcheck' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `Roslyn' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `staticcheck2024' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `phpstan2024' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `rubocop2024' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Citation `htmlhint2024' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: Reference `tab:linter-coverage' on page 5 undefined on input line 48.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: Citation `curtis1979measuring' on page 5 undefined on input line 74.
 
@@ -856,19 +844,19 @@ LaTeX Warning: Citation `SciToolsUnderstand' on page 5 undefined on input line 7
 
 LaTeX Warning: Reference `sec:dataset-processing' on page 5 undefined on input line 74.
 
+[5.5]
 
-LaTeX Warning: Citation `ReplicationPackage' on page 5 undefined on input line 78.
+LaTeX Warning: Citation `ReplicationPackage' on page 6 undefined on input line 78.
 
-) (./sections/results.tex [5.5]
-
-LaTeX Warning: Reference `tab:violation_rates' on page 6 undefined on input line 16.
-
-
+) (./sections/results.tex
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
 [6.6]
+
+LaTeX Warning: Reference `tab:violation_rates' on page 7 undefined on input line 16.
+
 
 ./sections/results.tex:22: LaTeX Error: Unknown float option `H'.
 
@@ -890,7 +878,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 LaTeX Warning: Reference `tab:static_analysis_ai_vs_human' on page 7 undefined on input line 47.
 
-
+[7.7]
 Overfull \hbox (2.62854pt too wide) in paragraph at lines 111--111
 []|\T1/lmr/bx/n/9 (-20) AI
  []
@@ -1291,32 +1279,19 @@ Overfull \hbox (6.93259pt too wide) in paragraph at lines 111--111
  []
 
 
-LaTeX Warning: Citation `curtis1979measuring' on page 7 undefined on input line 119.
+LaTeX Warning: Citation `curtis1979measuring' on page 8 undefined on input line 119.
 
 
-LaTeX Warning: Citation `sneed1995understanding' on page 7 undefined on input line 119.
+LaTeX Warning: Citation `sneed1995understanding' on page 8 undefined on input line 119.
 
 
-LaTeX Warning: Citation `zuse1993criteria' on page 7 undefined on input line 119.
+LaTeX Warning: Citation `zuse1993criteria' on page 8 undefined on input line 119.
 
 
-LaTeX Warning: Citation `SciToolsUnderstand' on page 7 undefined on input line 122.
+LaTeX Warning: Citation `SciToolsUnderstand' on page 8 undefined on input line 122.
 
-[7.7]
 
 LaTeX Warning: Reference `tab:rq2_metrics' on page 8 undefined on input line 132.
-
-
-LaTeX Warning: Citation `Semgrep' on page 8 undefined on input line 190.
-
-
-LaTeX Warning: Citation `cwe2024' on page 8 undefined on input line 190.
-
-
-LaTeX Warning: Citation `codeql2024' on page 8 undefined on input line 190.
-
-
-LaTeX Warning: Citation `bandit2024' on page 8 undefined on input line 190.
 
 
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
@@ -1324,6 +1299,18 @@ Overfull \hbox (8.33397pt too wide) has occurred while \output is active
  []
 
 [8.8]
+
+LaTeX Warning: Citation `Semgrep' on page 9 undefined on input line 190.
+
+
+LaTeX Warning: Citation `cwe2024' on page 9 undefined on input line 190.
+
+
+LaTeX Warning: Citation `codeql2024' on page 9 undefined on input line 190.
+
+
+LaTeX Warning: Citation `bandit2024' on page 9 undefined on input line 190.
+
 
 ./sections/results.tex:198: LaTeX Error: Unknown float option `H'.
 
@@ -1356,6 +1343,12 @@ LaTeX Warning: Reference `fig:severity_dist' on page 9 undefined on input line 2
 
 LaTeX Warning: Reference `tab:cwe_dist' on page 9 undefined on input line 209.
 
+[9.9]
+Overfull \hbox (8.33397pt too wide) has occurred while \output is active
+[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
+ []
+
+[10.10]
 
 ./sections/results.tex:213: LaTeX Error: Unknown float option `H'.
 
@@ -1368,7 +1361,7 @@ l.213 \begin{table}[H]
 Option `H' ignored and `p' used.
 
 
-LaTeX Warning: Reference `tab:cont_metrics' on page 9 undefined on input line 235.
+LaTeX Warning: Reference `tab:cont_metrics' on page 11 undefined on input line 235.
 
 
 ./sections/results.tex:237: LaTeX Error: Unknown float option `H'.
@@ -1386,18 +1379,13 @@ Underfull \hbox (badness 10000) in alignment at lines 250--250
 [][][][][] 
  []
 
+[11.11]
 
-LaTeX Warning: Reference `tab:rq3_top5_cwe' on page 9 undefined on input line 255.
+LaTeX Warning: Reference `tab:rq3_top5_cwe' on page 12 undefined on input line 255.
 
 
-LaTeX Warning: Reference `tab:cwe_dist' on page 9 undefined on input line 255.
+LaTeX Warning: Reference `tab:cwe_dist' on page 12 undefined on input line 255.
 
-[9.9]
-Overfull \hbox (8.33397pt too wide) has occurred while \output is active
-[]\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
- []
-
-[10.10]
 
 ./sections/results.tex:257: LaTeX Error: Unknown float option `H'.
 
@@ -1409,12 +1397,12 @@ l.257 \begin{table}[H]
                       
 Option `H' ignored and `p' used.
 
-) [11.11] (./sections/discussion.tex
+
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
 
-[12.12] [13.13]) (./main.bbl)
+[12.12] [13.13]) (./sections/discussion.tex) (./main.bbl)
 Overfull \hbox (8.33397pt too wide) has occurred while \output is active
 []\T1/lmss/bx/n/10.5 Humans versus AI: A Multi-Dimensional Characterization of Code Quality and Security 
  []
@@ -1438,21 +1426,21 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  863F74AED192B1829B965A44FA9463D1;6995.
+(rerunfilecheck)             After:  94DB44C9923AD28228AE872F33B60586;6912.
  ) 
 Here is how much of TeX's memory you used:
- 24378 strings out of 467525
- 428573 string characters out of 5418983
- 908975 words of memory out of 5000000
+ 24371 strings out of 467525
+ 428488 string characters out of 5418983
+ 905975 words of memory out of 5000000
  52544 multiletter control sequences out of 15000+600000
- 759626 words of font info for 256 fonts, out of 8000000 for 9000
+ 759319 words of font info for 253 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,14n,93p,1879b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,14n,93p,1879b,602s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Regular.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (14 pages, 581611 bytes).
+Output written on main.pdf (14 pages, 584564 bytes).
 PDF statistics:
- 277 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 67 named destinations out of 1000 (max. 500000)
  76822 words of extra memory for PDF output out of 89155 (max. 10000000)
 
