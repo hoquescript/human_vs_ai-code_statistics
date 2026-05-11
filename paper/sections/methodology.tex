@@ -4,7 +4,7 @@
 \subsection{Dataset and Data Processing}
 \label{sec:dataset-processing}
 
-We use the CodeMirage benchmark~\cite{codemirage2024}, a publicly available multilingual dataset hosted on Hugging Face that provides paired human-written and AI-generated source code across ten programming languages: C, C++, C\#, Go, HTML, Java, JavaScript, PHP, Python, and Ruby. CodeMirage comprises 10,000 human-written files and approximately 99,993 AI-generated counterparts produced by ten production-level LLMs spanning six providers. Table~\ref{tab:dataset} summarizes the language-level distribution.
+We use the CodeMirage benchmark~\cite{codemirage2024}, a publicly available multilingual dataset hosted on Hugging Face that provides paired human-written and AI-generated source code across ten programming languages: C, C++, C\#, Go, HTML, Java, JavaScript, PHP, Python, and Ruby. CodeMirage comprises 10,000 human-written files and approximately 99,993 AI-generated counterparts produced by ten production-level LLMs spanning six providers.
 
 The human-written code was drawn from the CodeParrot GitHub-Code-Clean dataset~\cite{codeparrot2022}, a curated subset of publicly available GitHub repositories sanitized prior to May 2022, before the widespread deployment of code-generating LLMs and autonomous coding agents. This temporal bound ensures that the human baseline is free from AI contamination. For each language, 1,000 files were sampled with additional length-based filtering to preserve diversity while bounding file size to a tractable scale for static analysis.
 
