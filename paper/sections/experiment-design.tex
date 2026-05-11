@@ -1,23 +1,24 @@
 \section{Experiment Design}
-\label{sec:experiment-design}
+\label{sec:study_design}
+We characterize defect patterns across three analytical dimensions: functional correctness, structural complexity, and security vulnerabilities.
 
-\subsection{Research Questions}
-\label{sec:rqs}
+\subsubsection{Notes}
+A statistically significant regression slope ($p < 0.05$) is interpreted as evidence of a trend. In cases where the data may violate linearity or normality assumptions, we apply the nonparametric Mann-Kendall trend test~\cite{mann1945nonparametric}, which is robust to non-normal distributions and outliers. This combined methodology ensures the reliability and validity of our assessment of issue prevalence trends across heterogeneous language and authorship combinations.
 
-This study investigates the following research questions:
+\subsection{RQ1: Functional Correctness and Defect Prevalence}
 
-\begin{description}
-    \item[\textbf{RQ1:}] TODO: Research question 1.
-    \item[\textbf{RQ2:}] TODO: Research question 2.
-    \item[\textbf{RQ3:}] TODO: Research question 3.
-\end{description}
+\noindent \textbf{RQ1:} \textit{Does AI-generated code exhibit different patterns of linter violations and defect types compared to human-written code across various programming languages?}
 
-\subsection{Dataset}
-\label{sec:dataset}
+Using the linter toolchain described in \S\ref{sec:static_analysis}, we compute violation rates per file and test statistical significance using chi-square tests ($\chi^2$, $\alpha=0.05$) with Cohen's $h$ effect sizes. We break down violations by severity level and identify top violation messages to characterize predominant issue types. Finally, we stratify by language type, comparing statically typed languages (C, C\texttt{++}, C\#, Java, Go) against dynamically typed languages (Python, JavaScript, PHP, Ruby) to test whether static type systems mitigate defect risks in AI-generated code. HTML is analyzed separately as a markup language and excluded from this typed-language comparison.
 
-TODO: Describe the dataset. Include repository selection criteria, scale (number of repositories, files, lines of code), language coverage, and any filtering or exclusion decisions.
+\subsection{RQ2: Structural Complexity and Code Composition}
 
-\subsection{Tooling}
-\label{sec:tooling}
+\noindent \textbf{RQ2:} \textit{Do structural characteristics such as complexity, coupling, and lexical volume differ statistically between AI-generated and human-written code?}
 
-TODO: Describe the tools used for static analysis, metric extraction, or vulnerability detection. Justify tool choices and note known limitations.
+Traditional software quality models assume structural complexity metrics predict defect density. We test whether this assumption generalizes to AI-generated code using the 27 structural metrics described in \S\ref{sec:static_analysis}. We compute Pearson correlations between each metric and violation counts separately for AI and human samples, then apply Fisher's z-transformation to test whether correlation strengths differ significantly between authorship types ($\alpha=0.05$, Bonferroni-corrected). This analysis tests whether AI code breaks traditional complexity-quality relationships through unexpected patterns such as high control-flow complexity paired with low architectural coupling.
+
+\subsection{RQ3: Security Vulnerability Patterns}
+
+\noindent \textbf{RQ3:} \textit{What security vulnerability patterns are most prevalent in AI-generated code, and how do they vary by language?}
+
+Security vulnerabilities pose direct exploitation risks distinct from general correctness issues. Using the Semgrep analysis protocol described in \S\ref{sec:static_analysis}, we extract CWE identifiers and severity levels (info, warning, error, critical) for each finding. We compute vulnerability density separately for AI and human code, then apply Mann-Whitney U tests and Cliff's delta to test whether differences are significant ($\alpha=0.05$, Bonferroni-corrected). We specifically examine: (1) overall vulnerability density differences between authorship types, (2) which CWE categories dominate AI-generated code, and (3) whether statically typed languages exhibit lower vulnerability rates than dynamically typed languages.

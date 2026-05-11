@@ -1,17 +1,78 @@
 \section{Methodology}
 \label{sec:methodology}
 
-\subsection{Repository Selection}
-\label{sec:repo-selection}
+\subsection{Dataset and Data Processing}
+\label{sec:dataset-processing}
 
-TODO: Describe repository selection criteria. Explain filtering strategy, exclusion rules, and language mapping decisions.
+We use the CodeMirage benchmark~\cite{codemirage2024}, a publicly available multilingual dataset hosted on Hugging Face that provides paired human-written and AI-generated source code across ten programming languages: C, C++, C\#, Go, HTML, Java, JavaScript, PHP, Python, and Ruby. CodeMirage comprises 10,000 human-written files and approximately 99,993 AI-generated counterparts produced by ten production-level LLMs spanning six providers. Table~\ref{tab:dataset} summarizes the language-level distribution.
 
-\subsection{Metric Extraction}
-\label{sec:metrics}
+The human-written code was drawn from the CodeParrot GitHub-Code-Clean dataset~\cite{codeparrot2022}, a curated subset of publicly available GitHub repositories sanitized prior to May 2022, before the widespread deployment of code-generating LLMs and autonomous coding agents. This temporal bound ensures that the human baseline is free from AI contamination. For each language, 1,000 files were sampled with additional length-based filtering to preserve diversity while bounding file size to a tractable scale for static analysis.
 
-TODO: Explain the metrics collected (e.g., cyclomatic complexity, lines of code, defect density). Justify why file-level or function-level analysis is appropriate.
+The AI-generated counterparts were produced using a two-stage text-to-code strategy. Each human-written file was first summarized by an LLM, capturing its purpose, functionality, logic structure, and key identifiers. A separate LLM was then prompted to generate a functionally equivalent implementation from the summary alone, without access to the original source. This approach prevents direct recitation while preserving functional intent. A rule-based inspector enforced that each generated file remained within acceptable bounds of the original's line count and character length, and required a BLEU score below 0.5 to prevent near-verbatim copying. Samples failing repeated generation attempts were discarded.
 
-\subsection{Statistical Analysis}
-\label{sec:statistical-analysis}
+The ten LLMs contributing AI-generated code are Claude-3.5-Haiku, GPT-4o-mini, GPT-o3-mini, Gemini-2.0-Flash, Gemini-2.0-Flash-Thinking, Gemini-2.0-Pro, DeepSeek-V3, DeepSeek-R1, Llama-3.3-70B, and Qwen-2.5-Coder-32B~\cite{codemirage2024}. For our quality characterization, we aggregate all AI-generated files across the ten LLMs into a single AI-authored category, allowing us to characterize properties of AI-generated code broadly rather than attributing findings to any specific model.
 
-TODO: Explain the statistical tests used and why they were chosen (e.g., nonparametric tests due to non-normal distributions). Describe effect size measures. Clarify the unit of analysis and multiple comparison corrections if applicable.
+We restrict our structural complexity analysis (RQ2) to the nine compiled or interpreted programming languages, excluding HTML. Metrics such as cyclomatic complexity and MaxInheritanceTree are defined for programming language constructs and are not meaningful for HTML markup. All other analyses include HTML where applicable tooling is available.
+
+\begin{table}[h]
+\centering
+\caption{Dataset Distribution by Language}
+\label{tab:dataset}
+\small
+\begin{tabular*}{\columnwidth}{l@{\extracolsep{\fill}}rrr}
+\toprule
+Language & AI Files & Human Files & Total \\
+\midrule
+Python     & 10{,}000 & 1{,}000 & 11{,}000 \\
+Java       & 10{,}000 & 1{,}000 & 11{,}000 \\
+JavaScript & 10{,}000 & 1{,}000 & 11{,}000 \\
+C++        & 9{,}999  & 1{,}000 & 10{,}999 \\
+C          & 10{,}000 & 1{,}000 & 11{,}000 \\
+C\#        & 9{,}997  & 1{,}000 & 10{,}997 \\
+Go         & 10{,}000 & 1{,}000 & 11{,}000 \\
+PHP        & 9{,}998  & 1{,}000 & 10{,}998 \\
+Ruby       & 10{,}000 & 1{,}000 & 11{,}000 \\
+HTML       & 9{,}999  & 1{,}000 & 10{,}999 \\
+\midrule
+\textbf{Total} & \textbf{99{,}993} & \textbf{10{,}000} & \textbf{109{,}993} \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+
+\subsection{Static Analysis Toolchain}
+\label{sec:static_analysis}
+To characterize qualitative differences between AI-generated and human-written code across multiple dimensions, we employ established static analysis tools to measure functional correctness, structural complexity, and security vulnerabilities.
+
+\subsubsection{Functional Defect Detection}
+For Python and Java, we follow the approach in Liu et al.~\cite{Liu2023}, using Pylint~\cite{Pylint} for Python and PMD~\cite{PMD} for Java. For JavaScript, we employ ESLint~\cite{ESLint}, a widely adopted linter for detecting syntax errors and style violations. For C and C++, we use Cppcheck~\cite{Cppcheck}, which captures a broad range of issues including undefined behavior, resource leaks, and portability concerns across both languages. For C\#, we use Roslyn~\cite{Roslyn}, integrated into the .NET SDK for syntax, semantic, and maintainability analysis. For Go, we apply staticcheck~\cite{staticcheck2024}, a comprehensive static analysis tool that identifies correctness bugs, deprecated API usage, and performance issues specific to the Go language. For PHP, we use PHPStan~\cite{phpstan2024}, which detects type errors, undefined variables, and logic mistakes without code execution. For Ruby, we apply RuboCop~\cite{rubocop2024}, which checks for style violations, potential bugs, and complexity issues. For HTML, we use HTMLHint~\cite{htmlhint2024} to detect syntax errors and structural issues in markup files. Table~\ref{tab:linter-coverage} summarizes the linter coverage and violation counts across our dataset.
+
+\begin{table}[h]
+  \centering
+  \caption{Linter coverage and violation counts per language.}
+  \label{tab:linter-coverage}
+  \small
+  \begin{tabular*}{\columnwidth}{l@{\extracolsep{\fill}}lrr}
+    \toprule
+    \textbf{Language} & \textbf{Linter} & \textbf{\# Files} & \textbf{\# Violations} \\
+    \midrule
+    Python      & Pylint         & 11{,}000 & --- \\
+    Java        & PMD            & 11{,}000 & --- \\
+    JavaScript  & ESLint         & 11{,}000 & --- \\
+    C           & Cppcheck       & 11{,}000 & --- \\
+    C++         & Cppcheck       & 10{,}999 & --- \\
+    C\#         & Roslyn         & 10{,}997 & --- \\
+    Go          & staticcheck    & 11{,}000 & --- \\
+    PHP         & PHPStan        & 10{,}998 & --- \\
+    Ruby        & RuboCop        & 11{,}000 & --- \\
+    HTML        & HTMLHint       & 10{,}999 & --- \\
+    \bottomrule
+  \end{tabular*}
+\end{table}
+
+\subsubsection{Structural and Complexity Profiling}
+Existing works on program comprehension reveal that software metrics can be a valuable source of information for understanding the properties of a piece of software~\cite{curtis1979measuring, sneed1995understanding, zuse1993criteria}. We use Understand by SciTools~\cite{SciToolsUnderstand} to extract software metrics from the nine compiled and interpreted programming languages in our dataset, excluding HTML as noted in \S\ref{sec:dataset-processing}. Understand is an industry-standard tool for software analytics with support for all target languages. We extract 27 metrics per file capturing three key dimensions of code structure.
+
+First, \textit{Volume and Complexity} metrics including CountLineCode, CountStmt, and Cyclomatic Complexity quantify verbosity and control-flow density. Second, \textit{Lexical Entropy} metrics use Halstead measures (Halstead Effort and Halstead Volume) to assess vocabulary richness and algorithmic complexity. Finally, \textit{Architectural Depth} metrics such as CountClassCoupled and MaxInheritanceTree capture object-oriented coupling and inheritance patterns, applied to object-oriented languages where these constructs are defined (C++, C\#, Java, PHP, Python, Ruby). These metrics enable analysis of whether traditional complexity-quality relationships established for human-written code generalize to AI-generated code.
+
+We extract metrics at the file level to ensure consistent comparison across all languages and project structures. Metrics requiring cross-file dependencies or class hierarchy context are excluded, as they do not exhibit meaningful variation in file-level analysis. All metric extraction configurations and complete results are available in our replication package~\cite{ReplicationPackage}.
