@@ -1,0 +1,18 @@
+\section{Introduction}
+\label{sec:introduction}
+
+AI-assisted programming tools have become a standard part of modern software development. Systems such as GitHub Copilot, Devin, and Cursor now automate tasks ranging from code completion to pull request creation, operating with minimal human oversight. The scale of this adoption is substantial: the AIDev dataset documents over 980,000 AI-generated contributions spanning more than 116,000 repositories~\cite{aidev2025}. We draw on this dataset to examine how AI authorship affects code quality across a broad range of open-source projects.
+
+While automation accelerates development, it also introduces quality concerns that differ in character from those typically associated with human-authored code. Existing research shows that AI-generated code exhibits higher error rates than human-authored code~\cite{coderabbit2025, rao2023security, khoury2023chatgpt}, yet several practical questions remain unanswered: (1) which violation categories and severity levels predominate in AI-generated code, (2) how structural complexity metrics relate to defect density and whether these relationships differ between AI and human-authored code, and (3) which programming languages face the largest quality gaps and whether static type systems reduce AI-associated risks.
+
+We address these questions through a large-scale empirical investigation of 19,539 files drawn from the AIDev dataset, applying three complementary analyses: language-specific linters to assess functional correctness, structural complexity measurements to assess architectural quality, and security scanners to characterize CWE patterns. All analyses are stratified by programming language, enabling direct comparison of AI-generated and human-authored code across multiple quality dimensions. The main contributions of this work are as follows:
+
+\begin{enumerate}
+
+\item \textbf{Large-scale empirical assessment of AI-generated versus human-authored code quality.} We analyze 19,539 files across six programming languages using a multi-dimensional framework covering functional, structural, and security quality dimensions, enabling systematic characterization of quality differences across language families and authorship types.
+
+\item \textbf{Evidence that type safety reduces AI-associated quality gaps.} Statically-typed languages (Java, C\#, TypeScript) exhibit significantly narrower violation density gaps between AI-generated and human-authored code (1.32x to 1.66x) compared to the 2.34x gap observed in dynamically-typed languages. Chi-square analysis confirms this pattern ($p < 0.001$), suggesting that compiler-enforced type checking intercepts a class of errors that otherwise propagate in dynamic languages.
+
+\item \textbf{Identification of divergent structural complexity patterns in AI-generated code.} We provide empirical evidence that AI-generated code exhibits an `inverted' quality profile characterized by high cyclomatic complexity alongside low structural coupling, a pattern statistically distinct from human-authored code ($p < 0.05$). This finding indicates that the structural composition of AI-generated code does not conform to assumptions underlying conventional quality metrics.
+
+\end{enumerate}

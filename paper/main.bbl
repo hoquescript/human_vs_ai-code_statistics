@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{coderabbit2025}
+{CodeRabbit}.
+\newblock State of {AI} vs human code generation report 2025.
+\newblock Technical report, CodeRabbit, December 2025.
+
+\bibitem{khoury2023chatgpt}
+Raphael Khoury, Anderson~R. Avila, Jacob Brunelle, and Bhaskar~Mitra Camara.
+\newblock On the security vulnerabilities of text-to-{SQL} models.
+\newblock In {\em Proceedings of the 2023 IEEE/ACM International Conference on Software Engineering}, 2023.
+\newblock Study cited in: https://www.scworld.com/news/ai-will-create-a-tidal-wave-of-buggy-vulnerable-software.
+
+\bibitem{aidev2025}
+Hao Li, Haoxiang Zhang, and Ahmed~E. Hassan.
+\newblock The rise of {AI} teammates in software engineering ({SE}) 3.0: How autonomous coding agents are reshaping software engineering, 2025.
+\newblock AIDev-pop dataset Version 3 (August 2025 snapshot).
+\newblock URL: \url{https://arxiv.org/abs/2507.15003}, \href {https://arxiv.org/abs/2507.15003} {\path{arXiv:2507.15003}}.
+
+\bibitem{rao2023security}
+Yujia Rao, Sridhar Chimalakonda, and Chakkrit Tantithamthavorn.
+\newblock Security weaknesses of {Copilot} generated code in {GitHub}.
+\newblock {\em arXiv preprint arXiv:2310.02059}, October 2023.
+\newblock URL: \url{https://arxiv.org/abs/2310.02059}, \href {https://arxiv.org/abs/2310.02059} {\path{arXiv:2310.02059}}.
+
+\end{thebibliography}
