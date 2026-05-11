@@ -14,31 +14,6 @@ The ten LLMs contributing AI-generated code are Claude-3.5-Haiku, GPT-4o-mini, G
 
 We restrict our structural complexity analysis (RQ2) to the nine compiled or interpreted programming languages, excluding HTML. Metrics such as cyclomatic complexity and MaxInheritanceTree are defined for programming language constructs and are not meaningful for HTML markup. All other analyses include HTML where applicable tooling is available.
 
-\begin{table}[h]
-\centering
-\caption{Dataset Distribution by Language}
-\label{tab:dataset}
-\small
-\begin{tabular*}{\columnwidth}{l@{\extracolsep{\fill}}rrr}
-\toprule
-Language & AI Files & Human Files & Total \\
-\midrule
-Python     & 10{,}000 & 1{,}000 & 11{,}000 \\
-Java       & 10{,}000 & 1{,}000 & 11{,}000 \\
-JavaScript & 10{,}000 & 1{,}000 & 11{,}000 \\
-C++        & 9{,}999  & 1{,}000 & 10{,}999 \\
-C          & 10{,}000 & 1{,}000 & 11{,}000 \\
-C\#        & 9{,}997  & 1{,}000 & 10{,}997 \\
-Go         & 10{,}000 & 1{,}000 & 11{,}000 \\
-PHP        & 9{,}998  & 1{,}000 & 10{,}998 \\
-Ruby       & 10{,}000 & 1{,}000 & 11{,}000 \\
-HTML       & 9{,}999  & 1{,}000 & 10{,}999 \\
-\midrule
-\textbf{Total} & \textbf{99{,}993} & \textbf{10{,}000} & \textbf{109{,}993} \\
-\bottomrule
-\end{tabular*}
-\end{table}
-
 
 \subsection{Static Analysis Toolchain}
 \label{sec:static_analysis}

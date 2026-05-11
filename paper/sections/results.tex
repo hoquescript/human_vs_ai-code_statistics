@@ -197,7 +197,11 @@ AI-generated code has substantially higher vulnerability density than human-writ
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\columnwidth]{security_severity.png}
+    \IfFileExists{security_severity.png}{%
+        \includegraphics[width=\columnwidth]{security_severity.png}%
+    }{%
+        \fbox{\parbox{0.9\columnwidth}{\centering Missing figure file: \texttt{security\_severity.png}}}%
+    }
     \caption{Severity distribution of Semgrep security findings for AI-generated and human-written code (100\% stacked). Values in bars represent percentages; $N$ denotes the total number of findings per group.}
     \label{fig:severity_dist}
 \end{figure}
