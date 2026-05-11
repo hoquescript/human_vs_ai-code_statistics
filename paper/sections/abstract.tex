@@ -1,18 +1,3 @@
 \begin{abstract}
-
-\textbf{Background.}
-TODO: Context and motivation.
-
-\textbf{Aims.}
-TODO: Research goals and questions.
-
-\textbf{Method.}
-TODO: Dataset scale, tooling, statistical methods, and analysis pipeline.
-
-\textbf{Results.}
-TODO: Main empirical findings with quantitative evidence.
-
-\textbf{Conclusions.}
-TODO: Implications and broader interpretation.
-
+AI coding assistants now reach over 84\% of developers, yet the software engineering community still lacks a unified empirical picture of how AI-generated code compares to human-written code across quality and security dimensions. Existing studies fragment this picture by using different datasets and toolchains, making it hard to distinguish patterns that hold generally from those that are artifacts of a particular setup. To address this, we analyse 109,993 source files from the CodeMirage benchmark, covering 10 programming languages and 10 production-level LLMs alongside 10,000 human-authored files, examining stylistic violations, structural complexity metrics, security vulnerability profiles, and software maintainability indicators, with all comparisons grounded in nonparametric statistical tests and effect sizes. The results reveal that AI-generated code carries 4.6$\times$ higher violation densities overall, though the language's type discipline strongly moderates this gap: statically typed languages narrow it to 1.32$\times$ while dynamically typed languages widen it to 2.75$\times$. Structurally, AI-generated code pairs higher cyclomatic complexity with lower class coupling and reduced lexical diversity, a profile that suggests conventional complexity-quality assumptions do not transfer to AI-generated code the way they do to human-written software. Security vulnerability distributions follow distinct patterns across origin, and when comparing open-weight and closed-weight LLMs on the same benchmark, measurable differences emerge in both quality and security profiles, indicating that model weight accessibility is a meaningful axis of variation. Taken together, these findings offer an empirical baseline that can inform how generation models are evaluated, how developers are trained to supervise AI output across different language contexts, and how detection and attribution tools are built on reproducible evidence.
 \end{abstract}

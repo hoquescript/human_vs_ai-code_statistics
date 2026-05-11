@@ -1,51 +1,48 @@
 This is BibTeX, Version 0.99e (TeX Live 2026)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-The style file: plainurl.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: references.bib
-You've used 22 entries,
-            2943 wiz_defined-function locations,
-            756 strings with 8465 characters,
-and the built_in function-call counts, 8368 in all, are:
-= -- 878
-> -- 276
-< -- 1
-+ -- 103
-- -- 80
-* -- 314
-:= -- 1204
-add.period$ -- 83
-call.type$ -- 22
-change.case$ -- 106
+I found no \citation commands---while reading file main.aux
+I found no \bibdata command---while reading file main.aux
+I found no \bibstyle command---while reading file main.aux
+You've used 0 entries,
+            0 wiz_defined-function locations,
+            83 strings with 482 characters,
+and the built_in function-call counts, 0 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 0
+:= -- 0
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 202
-empty$ -- 883
-format.name$ -- 80
-if$ -- 2268
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 0
+format.name$ -- 0
+if$ -- 0
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 7
-newline$ -- 128
-num.names$ -- 44
-pop$ -- 275
-preamble$ -- 1
-purify$ -- 83
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 0
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 0
+purify$ -- 0
 quote$ -- 0
-skip$ -- 621
+skip$ -- 0
 stack$ -- 0
-substring$ -- 202
-swap$ -- 35
-text.length$ -- 1
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 0
 warning$ -- 0
-while$ -- 53
-width$ -- 24
-write$ -- 262
+while$ -- 0
+width$ -- 0
+write$ -- 0
+(There were 3 error messages)
