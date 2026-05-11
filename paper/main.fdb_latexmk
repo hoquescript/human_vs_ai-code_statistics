@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1778486824.91752 "main.aux" "main.bbl" "main" 1778486825.00637 2
+["bibtex main"] 1778493229.28021 "main.aux" "main.bbl" "main" 1778493557.51513 2
   "./references.bib" 1778461639.24688 20228 46c09ceed16c5e501c0e38acf12c2cfa ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/urlbst/plainurl.bst" 1675116457 33495 46cfb45e24a877059f9f7e142c7fc61c ""
-  "main.aux" 1778486816.91604 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.aux" 1778493557.2374 11762 e785840149e4e63b95277763aebd45e1 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1778486823.83988 "/Users/mohaiminulhoque/Developer/Research/statistics/paper/main.tex" "main.pdf" "main" 1778486824.84939 2
-  "/Users/mohaiminulhoque/Developer/Research/statistics/paper/main.tex" 1778486285.57628 408 0d3d96354d246287d3efca679968f092 ""
+["pdflatex"] 1778493556.52475 "/Users/mohaiminulhoque/Developer/Research/statistics/paper/main.tex" "main.pdf" "main" 1778493557.51527 2
+  "/Users/mohaiminulhoque/Developer/Research/statistics/paper/main.tex" 1778493436.09953 408 0d3d96354d246287d3efca679968f092 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free1.enc" 1622837620 3042 0e2b14b9be7d01075a4c4591d5d1781b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -217,13 +217,13 @@
   "cc-by.pdf" 1683801828 58331 68dd46bdec592205f67dc42dd8b763fc ""
   "lipics-logo-bw.pdf" 1683801828 83561 228e2a095239965e3f4546d0433e704b ""
   "lipics-v2021.cls" 1683801828 48381 c4e7e69c9670c8faa62e8975cfe00256 ""
-  "main.aux" 1778486816.91604 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "main.bbl" 1778486825.00521 0 d41d8cd98f00b204e9800998ecf8427e "bibtex main"
-  "main.out" 0 -1 0 "pdflatex"
-  "main.tex" 1778486285.57628 408 0d3d96354d246287d3efca679968f092 ""
+  "main.aux" 1778493557.2374 11762 e785840149e4e63b95277763aebd45e1 "pdflatex"
+  "main.bbl" 1778493229.37216 0 d41d8cd98f00b204e9800998ecf8427e "bibtex main"
+  "main.out" 1778493557.23833 6995 863f74aed192b1829b965a44fa9463d1 "pdflatex"
+  "main.tex" 1778493436.09953 408 0d3d96354d246287d3efca679968f092 ""
   "metadata.tex" 1778463377.7579 953 04d10d7e8cdae809a0aea39f663d28c7 ""
   "orcid.pdf" 1683801828 88694 b21075e0bfdd1e3bb46ba8e2af52827d ""
-  "sections/abstract.tex" 1778486806.25101 1985 bdd64c397a5aafd044e7d905e6a48ce6 ""
+  "sections/abstract.tex" 1778493555.17837 1770 25d0544b6ab93e055e6a3b2a515c2d9b ""
   "sections/acknowledgments.tex" 1778394694.86966 98 592d0ec260762c9477420ea7680ff9d7 ""
   "sections/discussion.tex" 1778394692.52076 1199 4340b57af6a7aee9d85e3604f07072d2 ""
   "sections/experiment-design.tex" 1778461005.80594 3521 3d86d043eede568f3fa83d949a68d5b3 ""
