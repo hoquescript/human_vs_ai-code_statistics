@@ -12,6 +12,9 @@ def get_data():
     df = df[df["language"].isin(["Python", "Java", "JavaScript", "CPP", "CSharp"])]
 
     # Add a unique id to the dataframe
-    df["id"] = uuid.uuid4()
+    df["id"] = [str(uuid.uuid4()) for _ in range(len(df))]
+
+    # Drop rows where the code column is null
+    df = df.dropna(subset=["code"])
 
     return df
