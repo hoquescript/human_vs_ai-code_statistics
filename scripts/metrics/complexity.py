@@ -1,146 +1,131 @@
 import csv
-import os
 import shutil
 import subprocess
-import scripts.report.complexity as complexity
+import sys
+from pathlib import Path
+
+UNDERSTAND_EXE = Path("/Applications/Understand.app/Contents/MacOS/und")
+UNDERSTAND_PYTHON = Path("/Applications/Understand.app/Contents/MacOS/Python")
+UNDERSTAND_PROJECT = Path(".analysis.und")
+LANGUAGES = ["Python", "Java", "Web", "c++", "c#"]
 
 METRICS = [
     # --- Size Metrics (Volume & Density) ---
-    "CountLine",                # Total lines
-    "CountLineCode",            # Code lines
-    "CountLineComment",         # Comment lines
-    "CountLineBlank",           # Blank lines
-    "CountStmt",                # Total statements
-    "CountStmtDecl",            # Declarative statements
-    "CountStmtExe",             # Executable statements
-    "CountLineCodeDecl",        # Lines of code with declarations
-    "CountLineCodeExe",         # Lines of code with execution
-
+    "CountLine",  # Total lines
+    "CountLineCode",  # Code lines
+    "CountLineComment",  # Comment lines
+    "CountLineBlank",  # Blank lines
+    "CountStmt",  # Total statements
+    "CountStmtDecl",  # Declarative statements
+    "CountStmtExe",  # Executable statements
+    "CountLineCodeDecl",  # Lines of code with declarations
+    "CountLineCodeExe",  # Lines of code with execution
     # --- Average Size Metrics (Consistency) ---
-    "AvgLine", 
-    "AvgLineCode", 
-    "AvgLineComment", 
+    "AvgLine",
+    "AvgLineCode",
+    "AvgLineComment",
     "AvgLineBlank",
-
     # --- Declaration Metrics (Structure Count) ---
-    "CountDeclClass",           # Number of classes
-    "CountDeclFunction",        # Number of functions
+    "CountDeclClass",  # Number of classes
+    "CountDeclFunction",  # Number of functions
     "CountDeclExecutableUnit",  # Number of executable units
-
     # --- Complexity Metrics (Control Flow) ---
-    "Cyclomatic",               # Cyclomatic complexity
-    "MaxCyclomatic",            # Max complexity in file
-    "AvgCyclomatic",            # Average complexity
-    "SumCyclomatic",            # Total complexity
-    "MaxNesting",               # Deepest nesting level
-
+    "Cyclomatic",  # Cyclomatic complexity
+    "MaxCyclomatic",  # Max complexity in file
+    "AvgCyclomatic",  # Average complexity
+    "SumCyclomatic",  # Total complexity
+    "MaxNesting",  # Deepest nesting level
     # --- Documentation Metrics (Readability) ---
-    "RatioCommentToCode",       # Ratio of comments to code
-
+    "RatioCommentToCode",  # Ratio of comments to code
     # --- Halstead Metrics (Lexical Entropy/Vocabulary) ---
-    "HalsteadEffort",                # Halstead Effort
-    "HalsteadDifficulty",            # Halstead Difficulty
-
+    "HalsteadEffort",  # Halstead Effort
+    "HalsteadDifficulty",  # Halstead Difficulty
     # --- Architecture/OO Metrics (Coupling & Inheritance) ---
-    "CountClassCoupled",        # Coupling (Dependencies)
-    "MaxInheritanceTree"        # Inheritance Depth
+    "CountClassCoupled",  # Coupling (Dependencies)
+    "MaxInheritanceTree",  # Inheritance Depth
 ]
 
 
-def getHalsteadVolume(report):
-    effort_str = str(report.get("HalsteadEffort", "0"))
-    difficulty_str = str(report.get("HalsteadDifficulty", "0"))
-
+def get_halstead_volume(report: dict) -> float:
     try:
-        effort = float(effort_str.replace(",", ""))
-        difficulty = float(difficulty_str.replace(",", ""))
-        
-        # Avoid division by zero
-        if difficulty == 0:
-            return 0.0
-            
-        volume = effort / difficulty
-        return volume
-
+        effort = float(str(report.get("HalsteadEffort", "0")).replace(",", ""))
+        difficulty = float(str(report.get("HalsteadDifficulty", "0")).replace(",", ""))
+        return effort / difficulty if difficulty != 0 else 0.0
     except ValueError:
         return 0.0
 
-def parse_metrics(project_path):
-    db = complexity.open(project_path)
 
-    with open ("understand.csv", "w", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=['Name', 'HalsteadVolume', *METRICS])
+def parse_metrics(project_path: Path, output_path: Path, code_dir: Path):
+    if str(UNDERSTAND_PYTHON) not in sys.path:
+        sys.path.append(str(UNDERSTAND_PYTHON))
+    import understand
+
+    db = understand.open(str(project_path))
+    code_dir_resolved = code_dir.resolve()
+
+    with open(output_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["Name", "HalsteadVolume", *METRICS])
         writer.writeheader()
+
         for entity in db.ents("File"):
             if entity.library():
                 continue
-            report = entity.metric(METRICS)
+            if not Path(entity.longname()).is_relative_to(code_dir_resolved):
+                continue
 
-            # 2. Aggregation Logic: Look for classes INSIDE this file
-            # "Define" reference tells us which classes are created in this file
-            classes_in_file = file.refs("Define", "Class")
+            report = entity.metric(METRICS)
 
             max_dit = 0
             max_cbo = 0
-
-            for ref in classes_in_file:
-                class_entity = ref.ent()
-                
-                # Fetch class-specific metrics
-                class_metrics = class_entity.metric(["MaxInheritanceTree", "CountClassCoupled"])
-                
-                # Extract values safely (handle None)
-                dit = class_metrics.get("MaxInheritanceTree", 0)
-                cbo = class_metrics.get("CountClassCoupled", 0)
-
-                # Logic: We report the WORST case (Max) for the file
-                # You could also use sum() if you prefer total complexity
-                if dit and dit > max_dit:
+            for ref in entity.refs("Define", "Class"):
+                class_metrics = ref.ent().metric(
+                    ["MaxInheritanceTree", "CountClassCoupled"]
+                )
+                dit = class_metrics.get("MaxInheritanceTree") or 0
+                cbo = class_metrics.get("CountClassCoupled") or 0
+                if dit > max_dit:
                     max_dit = dit
-                if cbo and cbo > max_cbo:
+                if cbo > max_cbo:
                     max_cbo = cbo
 
-            # 3. Add calculated class metrics to the file report
             report["MaxInheritanceTree"] = max_dit
             report["CountClassCoupled"] = max_cbo
-            
-            # 4. Calculate Halstead Volume
-            report["HalsteadVolume"] = getHalsteadVolume(report)
-            report["Name"] = file.longname()
+            report["HalsteadVolume"] = get_halstead_volume(report)
+            report["Name"] = entity.longname()
 
             writer.writerow(report)
 
     db.close()
 
-if __name__ == "__main__":
-    # Executable Software
-    understand_exe = "/Applications/Understand.app/Contents/MacOS/und"    
 
-    # Source Code
-    source_path = os.path.abspath("temp/")
+def complexity_analysis(code_dir: Path, reports_dir: Path):
+    print(f"Running complexity analysis in {code_dir}...")
+    output = reports_dir / "complexity.csv"
 
-    # Check what files are in temp/
-    if os.path.exists(source_path):
-        files = os.listdir(source_path)
-    
-    # Understand project path
-    project_path = os.path.abspath(".analysis.und")
+    shutil.rmtree(UNDERSTAND_PROJECT, ignore_errors=True)
 
-    # Cleanup
-    if os.path.exists(project_path):
-        shutil.rmtree(project_path)
+    # Create project
+    subprocess.run(
+        [
+            str(UNDERSTAND_EXE),
+            "create",
+            "-languages",
+            *LANGUAGES,
+            str(UNDERSTAND_PROJECT),
+        ],
+        check=True,
+    )
+    # Add codes from code_dir to project
+    subprocess.run(
+        [str(UNDERSTAND_EXE), "add", str(code_dir.resolve()), str(UNDERSTAND_PROJECT)],
+        check=True,
+    )
+    # Analyze project
+    subprocess.run(
+        [str(UNDERSTAND_EXE), "analyze", str(UNDERSTAND_PROJECT)],
+        capture_output=True,
+        check=True,
+    )
 
-    # Running the command to create a project
-    subprocess.run([understand_exe, 
-                    "create", 
-                    "-languages", "Python",
-                    project_path])
-
-    # Referencing the source code directory to the tools
-    subprocess.run([understand_exe, "add", source_path, project_path])
-
-    # Analyze the project
-    result = subprocess.run([understand_exe, "analyze", project_path], capture_output=True)
-
-    # Parsing the metrics
-    parse_metrics(project_path)
+    parse_metrics(UNDERSTAND_PROJECT, output, code_dir)
+    print(f"Complexity analysis completed. Report written to {output}")

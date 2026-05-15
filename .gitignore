@@ -14,3 +14,6 @@ wheels/
 # Temp files
 temp/
 reports/
+
+# Understand project
+.analysis.und
