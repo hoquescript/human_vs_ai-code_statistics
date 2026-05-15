@@ -1,34 +1,34 @@
 import subprocess
-
-INPUT = "temp/"
-OUTPUT = "data/report/security.json"
-LANGUAGES = ["python", "java", "javascript", "c++", "c#"]
+import sys
+from pathlib import Path
 
 
-def analyze():
-    return subprocess.run(
+def security_analysis(code_dir: Path, reports_dir: Path):
+    print(f"Running security analysis in {code_dir}...")
+    output = reports_dir / "security.json"
+
+    result = subprocess.run(
         [
             "semgrep",
             "scan",
             "--pro",
             "--config",
             "p/security-audit",
+            "--no-git-ignore",
             "--json",
             "--output",
-            OUTPUT,
+            str(output.resolve()),
             "--verbose",
             "--jobs",
             "4",
-            INPUT,
+            str(code_dir.resolve()),
         ],
         capture_output=True,
         text=True,
     )
 
-
-if __name__ == "__main__":
-    result = analyze()
     if result.returncode != 0:
         print(f"Semgrep scan failed: {result.stderr}")
-    else:
-        print("Success")
+        sys.exit(result.returncode)
+
+    print(f"Security analysis completed. Report written to {output}")

@@ -8,4 +8,5 @@ dependencies = [
     "datasets>=4.8.5",
     "numpy>=2.4.4",
     "pandas>=3.0.2",
+    "semgrep>=1.163.0",
 ]

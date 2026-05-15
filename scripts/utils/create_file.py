@@ -1,46 +1,32 @@
-import os
 import pandas as pd
-import shutil
+from pathlib import Path
 
-"""
-Create code files from dataframe.
+_EXTENSIONS = {
+    "Python": ".py",
+    "Java": ".java",
+    "JavaScript": ".js",
+    "CPP": ".cpp",
+    "CSharp": ".cs",
+}
 
-Args:
-    commits: DataFrame containing filtered commit files
-    language: Programming language name for directory structure
-"""
 
-
-def create_file_from_commit(df: pd.DataFrame):
+def create_file_from_commit(df: pd.DataFrame, code_dir: Path) -> int:
     print(f"Files to create: {df.shape[0]}")
-    shutil.rmtree("temp", ignore_errors=True)
-    os.makedirs("temp", exist_ok=True)
 
     files_created = 0
     for row in df.itertuples(index=False):
-        language = row.language
-        code = row.code
-        filename = row.id + get_extension(language)
+        directory = code_dir / row.language
+        directory.mkdir(parents=True, exist_ok=True)
 
-        directory = f"temp/{language}"
-        os.makedirs(directory, exist_ok=True)
-
-        with open(os.path.join(directory, filename), "w") as f:
-            f.write(code)
+        filename = row.id + get_extension(row.language)
+        (directory / filename).write_text(row.code)
         files_created += 1
 
     print(f"Files created: {files_created}")
+    return files_created
 
 
-def get_extension(language: str):
-    if language == "Python":
-        return ".py"
-    elif language == "Java":
-        return ".java"
-    elif language == "JavaScript":
-        return ".js"
-    elif language == "CPP":
-        return ".cpp"
-    elif language == "CSharp":
-        return ".cs"
-    raise ValueError(f"Unsupported language: {language}")
+def get_extension(language: str) -> str:
+    if language not in _EXTENSIONS:
+        raise ValueError(f"Unsupported language: {language}")
+    return _EXTENSIONS[language]
