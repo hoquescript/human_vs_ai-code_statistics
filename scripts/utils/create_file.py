@@ -26,6 +26,7 @@ def create_file_from_commit(df, code_dir: Path) -> int:
         files_created += 1
 
     print(f"Files created: {files_created}")
+    print("_" * 80)
     return files_created
 
 

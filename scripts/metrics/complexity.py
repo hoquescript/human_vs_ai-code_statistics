@@ -129,3 +129,4 @@ def complexity_analysis(code_dir: Path, reports_dir: Path):
 
     parse_metrics(UNDERSTAND_PROJECT, output, code_dir)
     print(f"Complexity analysis completed. Report written to {output}")
+    print("_" * 80)

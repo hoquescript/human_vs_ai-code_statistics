@@ -32,3 +32,4 @@ def security_analysis(code_dir: Path, reports_dir: Path):
         sys.exit(result.returncode)
 
     print(f"Security analysis completed. Report written to {output}")
+    print("_" * 80)
